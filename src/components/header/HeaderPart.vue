@@ -41,7 +41,7 @@ export default {
   height: 1011px;
   padding-top: 38px;
   background-image: url("../../assets/images/header-bg.png");
-  background-size: cover;
+  background-size: 100% 1011px;
   background-repeat: no-repeat;
   background-position: center top;
   letter-spacing: 0.2px;

@@ -152,7 +152,7 @@ export default {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 405px) {
   .plus-part {
 
     &__title {

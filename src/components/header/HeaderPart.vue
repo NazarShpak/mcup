@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-part {
-  height: 906px;
+  height: 1011px;
   padding-top: 38px;
   background-image: url("../../assets/images/header-bg.png");
   background-size: cover;
@@ -93,9 +93,9 @@ export default {
 
 @media (max-width: 428px) {
   .header-part {
-    height: 463px;
+    height: 533px;
     padding-top: 17px;
-    background-size: 429px 463px;
+    background-size: 429px 533px;
     letter-spacing: 0.2px;
     color: #FFFFFF;
     text-shadow: 0 4.04615px 4.04615px rgba(0, 0, 0, 0.25);

@@ -4,16 +4,21 @@
     <!-- HEADER -->
     <header-part/>
 
+    <!-- PLUS -->
+    <plus-part/>
+
   </div>
 </template>
 
 <script>
 import HeaderPart from "../components/header/HeaderPart";
+import PlusPart from "../components/plus/PlusPart";
 
 export default {
   name: "MainPage",
   components: {
-    HeaderPart
+    HeaderPart,
+    PlusPart
   }
 }
 </script>

@@ -95,7 +95,7 @@ export default {
 
 @media (max-width: 428px) {
   .price-part {
-    margin-bottom: 76px;
+    margin-bottom: 100px;
 
     &__title {
       font-size: 26px;

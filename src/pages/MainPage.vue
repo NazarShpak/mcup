@@ -14,7 +14,7 @@
     <price-part/>
 
     <!-- REAGENTS -->
-<!--    <reagents-part/>-->
+    <reagents-part/>
 
     <!-- QUESTIONS - ANSWERS -->
     <questions-answers-part/>
@@ -27,7 +27,7 @@ import HeaderPart from "../components/header/HeaderPart";
 import PlusPart from "../components/plus/PlusPart";
 import ClientsPart from "../components/clients/ClientsPart";
 import PricePart from "../components/price/PricePart";
-// import ReagentsPart from "../components/reagents/ReagentsPart";
+import ReagentsPart from "../components/reagents/ReagentsPart";
 import QuestionsAnswersPart from "../components/questions-answers/QuestionsAnswersPart";
 
 export default {
@@ -37,7 +37,7 @@ export default {
     PlusPart,
     ClientsPart,
     PricePart,
-    // ReagentsPart,
+    ReagentsPart,
     QuestionsAnswersPart
   }
 }

@@ -37,7 +37,7 @@ export default {
   .clients-part {
     height: 239px;
     background-size: 100% 153px;
-    margin-bottom: 114px;
+    margin-bottom: 100px;
 
     &__title {
       font-size: 26px;

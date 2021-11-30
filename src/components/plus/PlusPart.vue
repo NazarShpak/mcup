@@ -64,6 +64,7 @@ export default {
 <style lang="scss" scoped>
 .plus-part {
   padding-top: 58px;
+  margin-bottom: 213px;
 
   &__title {
     font-size: 46px;
@@ -111,13 +112,14 @@ export default {
     line-height: 33px;
     letter-spacing: 0.1px;
     color: #FFFFFF;
-    margin: 0 auto 213px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 428px) {
   .plus-part {
     padding-top: 0;
+    margin-bottom: 100px;
 
     &__title {
       font-size: 21px;
@@ -147,7 +149,7 @@ export default {
       font-weight: bold;
       font-size: 22px;
       line-height: 33px;
-      margin: 0 auto 100px;
+      margin: 0 auto;
     }
   }
 }

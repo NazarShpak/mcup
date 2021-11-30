@@ -81,7 +81,7 @@ export default {
 
 @media (max-width: 428px) {
   .questions-answers-part {
-    margin-bottom: 101px;
+    margin-bottom: 100px;
 
     .container {
       padding: 0 5px;

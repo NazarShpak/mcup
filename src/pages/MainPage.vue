@@ -22,6 +22,9 @@
     <!-- REVIEWS -->
     <reviews-part/>
 
+    <!-- DELIVERY -->
+    <delivery-part/>
+
   </div>
 </template>
 
@@ -33,6 +36,7 @@ import PricePart from "../components/price/PricePart";
 import ReagentsPart from "../components/reagents/ReagentsPart";
 import QuestionsAnswersPart from "../components/questions-answers/QuestionsAnswersPart";
 import ReviewsPart from "../components/reviews/ReviewsPart";
+import DeliveryPart from "../components/delivery/DeliveryPart";
 
 export default {
   name: "MainPage",
@@ -43,7 +47,8 @@ export default {
     PricePart,
     ReagentsPart,
     QuestionsAnswersPart,
-    ReviewsPart
+    ReviewsPart,
+    DeliveryPart
   }
 }
 </script>

@@ -25,6 +25,9 @@
     <!-- DELIVERY -->
     <delivery-part/>
 
+    <!-- FOOTER -->
+    <footer-part/>
+
   </div>
 </template>
 
@@ -36,7 +39,8 @@ import PricePart from "../components/price/PricePart";
 import ReagentsPart from "../components/reagents/ReagentsPart";
 import QuestionsAnswersPart from "../components/questions-answers/QuestionsAnswersPart";
 import ReviewsPart from "../components/reviews/ReviewsPart";
-import DeliveryPart from "../components/delivery/DeliveryPart";
+import DeliveryPart from "../components/delivery/DeliveryPart"
+import FooterPart from "../components/footer/FooterPart";
 
 export default {
   name: "MainPage",
@@ -48,10 +52,11 @@ export default {
     ReagentsPart,
     QuestionsAnswersPart,
     ReviewsPart,
-    DeliveryPart
+    DeliveryPart,
+    FooterPart
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 </style>

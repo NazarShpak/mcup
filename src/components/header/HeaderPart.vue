@@ -94,7 +94,7 @@ export default {
 @media (max-width: 428px) {
   .header-part {
     height: 533px;
-    padding-top: 17px;
+    padding-top: 40px;
     background-size: 429px 533px;
     letter-spacing: 0.2px;
     color: #FFFFFF;

@@ -10,6 +10,9 @@
     <!-- CLIENTS -->
     <clients-part/>
 
+    <!-- PRICE -->
+    <price-part/>
+
   </div>
 </template>
 
@@ -17,13 +20,15 @@
 import HeaderPart from "../components/header/HeaderPart";
 import PlusPart from "../components/plus/PlusPart";
 import ClientsPart from "../components/clients/ClientsPart";
+import PricePart from "../components/price/PricePart";
 
 export default {
   name: "MainPage",
   components: {
     HeaderPart,
     PlusPart,
-    ClientsPart
+    ClientsPart,
+    PricePart
   }
 }
 </script>

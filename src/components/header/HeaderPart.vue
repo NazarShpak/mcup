@@ -58,7 +58,7 @@ export default {
     background-image: url("../../assets/images/header-bg-2.png");
     background-size: inherit;
     background-repeat: no-repeat;
-    background-position: right 56px;
+    background-position: right 118px;
     padding-top: 178px;
   }
 
@@ -67,14 +67,14 @@ export default {
     font-size: 55px;
     line-height: 66px;
     width: 812px;
-    padding-bottom: 41px;
+    margin-bottom: 68px;
   }
 
   &__info {
     font-size: 29px;
     line-height: 51px;
     width: 500px;
-    padding-bottom: 22px;
+    margin-bottom: 45px;
   }
 
   &__btn {
@@ -95,7 +95,8 @@ export default {
   .header-part {
     height: 533px;
     padding-top: 40px;
-    background-size: 429px 533px;
+    background-image: url("../../assets/images/header-bg-mob.png");
+    background-size: 428px 533px;
     letter-spacing: 0.2px;
     color: #FFFFFF;
     text-shadow: 0 4.04615px 4.04615px rgba(0, 0, 0, 0.25);
@@ -111,23 +112,23 @@ export default {
 
     &__block {
       height: 405px;
-      background-size: 220px 154px;
-      background-position: right 210px;
-      padding-top: 50px;
+      background-size: 185px 201px;
+      background-position: 216px 151px;
+      padding-top: 27px;
     }
 
     &__title {
       font-size: 23px;
       line-height: 30px;
       width: 300px;
-      padding-bottom: 23px;
+      margin-bottom: 23px;
     }
 
     &__info {
       font-size: 18px;
       line-height: 20px;
       width: 288px;
-      padding-bottom: 23px;
+      margin-bottom: 23px;
     }
 
     &__btn {
@@ -142,12 +143,13 @@ export default {
 
 @media (max-width: 390px) {
   .header-part {
-    height: 453px;
-    background-size: 390px 453px;
+    height: 515px;
+    background-size: 390px 524px;
 
     &__block {
       height: 395px;
-      background-position: right 200px;
+      background-size: 150px 163px;
+      background-position: 215px 173px;
     }
   }
 }

@@ -55,6 +55,19 @@ a, span {
   cursor: pointer;
 }
 
+input,
+button:focus {
+  outline: none;
+}
+
+label,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border: none;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;

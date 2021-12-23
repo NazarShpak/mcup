@@ -1,10 +1,12 @@
 <template>
   <div class="clients-part">
+    <div class="container">
 
-    <h2 class="clients-part__title">
-      Наші кліенти
-    </h2>
+      <h2 class="clients-part__title">
+        Наші кліенти
+      </h2>
 
+    </div>
   </div>
 </template>
 
@@ -16,12 +18,15 @@ export default {
 
 <style lang="scss" scoped>
 .clients-part {
-  height: 661px;
-  background-image: url("../../assets/images/clients-bg.png");
-  background-size: 100% 530px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
   margin-bottom: 117px;
+
+  .container {
+    background-image: url("../../../assets/images/clients-bg.png");
+    background-size: 1230px 358px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 661px;
+  }
 
   &__title {
     font-weight: 500;
@@ -35,9 +40,12 @@ export default {
 
 @media (max-width: 428px) {
   .clients-part {
-    height: 239px;
-    background-size: 100% 153px;
     margin-bottom: 100px;
+
+    .container {
+      background-size: 372px 108px;
+      height: 239px;
+    }
 
     &__title {
       font-size: 26px;
@@ -47,8 +55,10 @@ export default {
 
 @media (max-width: 390px) {
   .clients-part {
-    height: 225px;
-    background-size: 100% 139px;
+    .container {
+      background-size: 358px 104px;
+      height: 220px;
+    }
 
     &__title {
       font-size: 26px;

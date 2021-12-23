@@ -74,7 +74,7 @@ export default {
   &__block {
     width: 1106px;
     margin: 0 auto;
-    background-image: url("../../assets/images/reagents-bg.png");
+    background-image: url("../../../assets/images/reagents-bg.png");
     background-size: inherit;
     background-repeat: no-repeat;
     background-position: right 305px;
@@ -133,7 +133,7 @@ export default {
     &__block {
       width: 100%;
       margin: 0 auto;
-      background-image: url("../../assets/images/reagents-bg.png");
+      background-image: url("../../../assets/images/reagents-bg.png");
       background-size: 102px 182px;
       background-repeat: no-repeat;
       background-position: right 150px;

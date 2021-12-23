@@ -103,7 +103,7 @@ export default {
 <style lang="scss" scoped>
 .footer-part {
   height: 533px;
-  background-image: url("../../assets/images/footer-bg.png");
+  background-image: url("../../../assets/images/footer-bg.png");
   background-size: 100% 533px;
   background-repeat: no-repeat;
   background-position: center top;
@@ -181,7 +181,7 @@ export default {
     letter-spacing: 0.1px;
     margin-bottom: 18px;
     background-size: 20px 32px;
-    background-image: url("../../assets/icons/phone.png");
+    background-image: url("../../../assets/icons/phone.png");
   }
 
   &__info-address {
@@ -189,7 +189,7 @@ export default {
     line-height: 41px;
     margin-bottom: 64px;
     background-size: 25px 31px;
-    background-image: url("../../assets/icons/marker.png");
+    background-image: url("../../../assets/icons/marker.png");
   }
 
   &__map {

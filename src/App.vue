@@ -108,4 +108,10 @@ export default {
   transform: translate(-50%);
   z-index: 20;
 }
+
+@media (max-width: 428px) {
+  .order-form {
+    top: 100px;
+  }
+}
 </style>

@@ -100,7 +100,7 @@ export default {
       quantity: '',
       quantityInfo: [
         '1',
-       '100',
+        '100',
         '1000'
       ]
     }
@@ -115,7 +115,7 @@ export default {
   },
   computed: {
     isComplete() {
-      return this.name && this.phone && this.quantity
+      return this.name && this.phone && this.quantity && this.checkName() && this.checkPhone()
     }
   },
   methods: {
@@ -185,7 +185,7 @@ export default {
   &__form-label {
     font-family: 'SFUIText';
     text-align: left;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 31px;
     line-height: 37px;
     color: #0B132A;
@@ -226,7 +226,7 @@ export default {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 26.4509px;
+    font-size: 26.4px;
     line-height: 39px;
     background: #FFFFFF;
     border: 1.6px solid #DEDEDE;
@@ -249,8 +249,79 @@ export default {
   }
 }
 
+.default {
+  border-bottom: 2.5px solid #EEEFF2;
+}
 
+.is-invalided {
+  border-bottom: 2.5px solid #FE2A2A;
+}
 
+.is-valid {
+  border-bottom: 2.5px solid #54DD83;
+}
+
+@media (max-width: 428px) {
+  .order-form {
+    height: 512px;
+    width: 350px;
+    box-shadow: 0 18.6106px 24.8142px rgba(0, 0, 0, 0.04), 0 12.4071px 18.6106px rgba(0, 0, 0, 0.04), 0 3.10177px 6.20355px rgba(0, 0, 0, 0.04), 0 0 0.775443px rgba(0, 0, 0, 0.04);
+    border-radius: 7.7px;
+
+    &__form {
+      padding: 20px 35px;
+    }
+
+    &__form-title {
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 19px;
+    }
+
+    &__form-label {
+      font-size: 19px;
+      line-height: 23px;
+    }
+
+    &__form-label + &__form-label {
+      margin-top: 33px;
+    }
+
+    &__form-input,
+    &__input::placeholder {
+      margin-top: 16px;
+      padding: 5px;
+      font-size: 16px;
+      line-height: 23px;
+      border-bottom: 2px solid #EEEFF2;
+    }
+
+    &__form-btns {
+      top: 40px;
+      width: 317px;
+    }
+
+    &__form-btn {
+      height: 92px;
+      width: 102px;
+      font-size: 16px;
+      line-height: 24px;
+      border: 1px solid #DEDEDE;
+      box-shadow: 0 9.48899px 13.8685px rgba(0, 0, 0, 0.07);
+      border-radius: 7px;
+    }
+
+    &__btn {
+      margin: 145px auto 0;
+      width: 184px;
+      height: 46px;
+      box-shadow: 0 4.65266px 6.20355px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      font-size: 17px;
+      line-height: 20px;
+    }
+  }
+}
 
 .default {
   border-bottom: 2px solid #EEEFF2;
@@ -262,6 +333,86 @@ export default {
 
 .is-valid {
   border-bottom: 2px solid #54DD83;
+}
+
+.form-btn-active {
+  background: linear-gradient(180deg, #EF2779 0%, #7834BE 100%);
+  color: #FCFCFC;
+}
+
+@media (max-width: 390px) {
+  .order-form {
+    height: 409px;
+    width: 280px;
+    box-shadow: 0 14.8985px 19.8646px rgba(0, 0, 0, 0.04), 0 9.93231px 14.8985px rgba(0, 0, 0, 0.04), 0 2.48308px 4.96615px rgba(0, 0, 0, 0.04), 0 0 0.620769px rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+
+    &__form {
+      padding: 15px 28px;
+    }
+
+    &__form-title {
+      font-size: 12px;
+      line-height: 19px;
+      margin-bottom: 16px;
+    }
+
+    &__form-label {
+      font-size: 15.5px;
+      line-height: 19px;
+    }
+
+    &__form-label + &__form-label {
+      margin-top: 22px;
+    }
+
+    &__form-input,
+    &__input::placeholder {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 19px;
+      border-bottom: 1.2px solid #EEEFF2;
+      padding: 3px;
+    }
+
+    &__form-btns {
+      top: 35px;
+      width: 254px;
+    }
+
+    &__form-btn {
+      height: 74px;
+      width: 82px;
+      font-size: 13px;
+      line-height: 19px;
+      border: 0.8px solid #DEDEDE;
+      box-sizing: border-box;
+      box-shadow: 0 7.59626px 11.1022px rgba(0, 0, 0, 0.07);
+      border-radius: 6px;
+    }
+
+    &__btn {
+      margin: 130px auto 0;
+      width: 147px;
+      height: 36px;
+      box-shadow: 0 3.72461px 4.96615px rgba(0, 0, 0, 0.05);
+      border-radius: 3.5px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+.default {
+  border-bottom: 1.2px solid #EEEFF2;
+}
+
+.is-invalided {
+  border-bottom: 1.2px solid #FE2A2A;
+}
+
+.is-valid {
+  border-bottom: 1.2px solid #54DD83;
 }
 
 .form-btn-active {

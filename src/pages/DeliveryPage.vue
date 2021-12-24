@@ -25,6 +25,8 @@ export default {
 <style lang="scss" scoped>
 .delivery-page {
   height: 327px;
+  padding-top: 28px;
+  color: #000000;
 
   &__title {
     width: 1116px;

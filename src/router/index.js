@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 import MainPage from "../pages/MainPage";
 import DeliveryPage from "../pages/DeliveryPage";
-
+import ReturnExchangePage from "../pages/ReturnExchangePage";
 
 export default new VueRouter({
   routes: [
@@ -15,11 +15,11 @@ export default new VueRouter({
       name: "delivery",
       component: DeliveryPage
     },
-    // {
-    //   path: "/services",
-    //   name: "services",
-    //   component: ServicesPage
-    // },
+    {
+      path: "/return-exchange",
+      name: "return-exchange",
+      component: ReturnExchangePage
+    },
     // {
     //   path: "/contacts",
     //   name: "contacts",

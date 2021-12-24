@@ -25,7 +25,7 @@
 
         <button
             class="header-part__btn"
-            @click="$router.push ({name: 'delivery'})"
+            @click="$router.push ({name: 'return-exchange'})"
         >
           Замовити
         </button>
@@ -46,7 +46,7 @@
         </button>
 
         <h2 class="header-part__subtitle">
-          {{ $route.name === 'delivery' ? 'Доставка товару' : otherPages ? 'Політика конфіденційності' : otherPages ? 'Повернення та обмін товару': '' }}
+          {{ $route.name === 'delivery' ? 'Доставка товару' : $route.name === 'return-exchange' ? 'Повернення та обмін товару' : otherPages ? 'Політика конфіденційності' : '' }}
         </h2>
 
       </div>

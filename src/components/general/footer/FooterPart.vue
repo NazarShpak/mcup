@@ -6,9 +6,27 @@
         <!-- First block -->
         <div class="footer-part__block">
 
-          <p class="footer-part__info-rules first">
-            Правила оплати, доставки та повернення коштів
-          </p>
+          <ul class="footer-part__menu-list first">
+
+            <li
+                class="footer-part__menu-item-first"
+                @click="goTo('return-exchange')"
+            >
+              Повернення та обмін товару
+            </li>
+            <li
+                class="footer-part__menu-item-second"
+                @click="goTo('delivery')"
+            >
+              Правила доставки
+            </li>
+            <li
+                class="footer-part__menu-item-third"
+            >
+              Політика конфіденційності
+            </li>
+
+          </ul>
 
           <p class="footer-part__info-producer">
             <span class="info-producer-span">Виробник</span> <br>
@@ -31,14 +49,35 @@
                  :src='require(`@/assets/icons/visa.png`)'
             >
           </div>
+
+          <div class="footer-part__other-info">
+            Все права защищены © 2018 - 2021 MCUP
+          </div>
         </div>
 
         <!-- Second block -->
         <div class="footer-part__block">
 
-          <p class="footer-part__info-rules second">
-            Правила оплати, доставки та повернення коштів
-          </p>
+          <ul class="footer-part__menu-list second">
+
+            <li
+                class="footer-part__menu-item-first"
+                @click="goTo('return-exchange')"
+            >
+              Політика конфіденційності
+            </li>
+            <li
+                class="footer-part__menu-item-second"
+                @click="goTo('delivery')"
+            >
+              Правила доставки
+            </li>
+            <li
+                class="footer-part__menu-item-third"
+            >
+              Повернення та обмін товару
+            </li>
+          </ul>
 
           <p class="footer-part__info-phone">
             {{ phone }}
@@ -68,7 +107,6 @@
 
         </div>
 
-
       </div>
     </div>
   </div>
@@ -96,6 +134,12 @@ export default {
   },
   components: {
     GmapCustomMarker
+  },
+  methods: {
+    goTo(value) {
+      this.$router.push({name: [value]})
+      this.$emit('goTo', value)
+    }
   }
 }
 </script>
@@ -131,11 +175,24 @@ export default {
     flex-direction: column;
   }
 
-  &__info-rules {
+  &__menu-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-size: 23px;
-    line-height: 41px;
-    width: 329px;
+    line-height: 27px;
+    width: 545px;
     margin-bottom: 35px;
+  }
+
+  &__menu-item-first {
+    margin-right: 25px;
+  }
+
+  &__menu-item-first,
+  &__menu-item-second {
+    margin-bottom: 30px;
   }
 
   &__info-producer {
@@ -165,6 +222,16 @@ export default {
 
   &__img + &__img {
     margin-left: 30px;
+  }
+
+  &__other-info {
+    position: absolute;
+    bottom: 16px;
+    left: 389px;
+    width: 240px;
+    font-size: 23px;
+    line-height: 27px;
+    font-weight: 500;
   }
 
   &__info-phone,
@@ -206,9 +273,10 @@ export default {
 @media (max-width: 428px) {
   .footer-part {
     height: 265px;
+    background-image: url("../../../assets/images/footer-bg-mob.png");
     background-size: 100% 265px;
-    padding-top: 32px;
-    padding-bottom: 20px;
+    padding-top: 17px;
+    padding-bottom: 15px;
 
     .container {
       padding: 0 16px;
@@ -219,27 +287,33 @@ export default {
     }
 
     .second {
-      display: inline-block;
+      display: block;
     }
 
-    &__info-rules {
-      font-size: 12px;
-      line-height: 23px;
-      width: 181px;
+    &__menu-list {
+      font-size: 9px;
+      line-height: 11px;
+      width: auto;
+      margin-bottom: 18px;
+    }
+
+    &__menu-item-first,
+    &__menu-item-second {
+      margin-right: 0;
       margin-bottom: 10px;
     }
 
     &__info-producer {
-      margin-top: 27px;
-      font-size: 12px;
+      margin-top: 36px;
+      font-size: 13px;
       line-height: 120%;
-      width: 189px;
+      width: 176px;
       margin-bottom: 29px;
 
       .info-producer-span {
-        font-size: 16px;
-        line-height: 24px;
-        padding-bottom: 10px;
+        font-size: 18px;
+        line-height: 26px;
+        padding-bottom: 11px;
       }
     }
 
@@ -250,12 +324,16 @@ export default {
     }
 
     &__img {
-      width: 53px;
-      height: 36px;
+      width: 58px;
+      height: 39px;
     }
 
     &__img + &__img {
-      margin-left: 22px;
+      margin-left: 24px;
+    }
+
+    &__other-info {
+      display: none;
     }
 
     &__info-phone {
@@ -271,7 +349,7 @@ export default {
       width: 150px;
       font-size: 12px;
       line-height: 100%;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
       padding-left: 15px;
       background-size: 12px 15px;
     }
@@ -290,11 +368,32 @@ export default {
 
 @media (max-width: 390px) {
   .footer-part {
-    &__info-rules {
-      font-size: 10px;
-      line-height: 23px;
-      width: 143px;
-      margin-bottom: 10px;
+
+    &__info-producer {
+      font-size: 12px;
+      line-height: 120%;
+      width: 170px;
+      margin-bottom: 30px;
+      margin-top: 44px;
+
+      .info-producer-span {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &__img-liqpay {
+      width: 103px;
+      height: 23px;
+    }
+
+    &__img {
+      width: 53px;
+      height: 36px;
+    }
+
+    &__img + &__img {
+      margin-left: 22px;
     }
   }
 }

@@ -17,6 +17,7 @@
     <header-part
         class="header-part"
         ref="headerPart"
+        :pageName="pageName"
     />
 
     <!-- MAIN PART -->
@@ -28,6 +29,7 @@
     <!-- FOOTER -->
     <footer-part
         class="footer-part"
+        @goTo="goTo"
     />
 
 
@@ -44,7 +46,8 @@ export default {
   data() {
     return {
       formOpen: false,
-      quantity: ''
+      quantity: '',
+      pageName: ''
     }
   },
   components: {
@@ -56,10 +59,18 @@ export default {
     openOrderForm(value) {
       this.quantity = value
       this.formOpen = true
-      this.scrollIntoHeaderPart()
+      this.scrollIntoHeaderPart('behavior')
     },
-    scrollIntoHeaderPart() {
-      this.$refs.headerPart.$el.scrollIntoView({behavior: 'smooth'});
+    scrollIntoHeaderPart(value) {
+      if(value) {
+        this.$refs.headerPart.$el.scrollIntoView({behavior: 'smooth'});
+      } else {
+        this.$refs.headerPart.$el.scrollIntoView();
+      }
+    },
+    goTo(value) {
+      this.pageName = value
+      this.scrollIntoHeaderPart()
     }
   }
 }

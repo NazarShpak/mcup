@@ -25,7 +25,7 @@
 
         <button
             class="header-part__btn"
-            @click="$router.push ({name: 'return-exchange'})"
+
         >
           Замовити
         </button>
@@ -46,9 +46,8 @@
         </button>
 
         <h2 class="header-part__subtitle">
-          {{ $route.name === 'delivery' ? 'Доставка товару' : $route.name === 'return-exchange' ? 'Повернення та обмін товару' : otherPages ? 'Політика конфіденційності' : '' }}
+          {{ pageName === 'delivery' ? 'Доставка товару' : pageName === 'return-exchange' ? 'Повернення та обмін товару' : otherPages ? 'Політика конфіденційності' : '' }}
         </h2>
-
       </div>
 
     </div>
@@ -61,6 +60,11 @@ export default {
   data() {
     return {
       otherPages: false
+    }
+  },
+  props: {
+    pageName: {
+      type: String
     }
   }
 }

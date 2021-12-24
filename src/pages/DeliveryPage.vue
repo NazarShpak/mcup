@@ -41,4 +41,44 @@ export default {
     line-height: 35px;
   }
 }
+
+@media (max-width: 428px) {
+  .delivery-page {
+    height: 264px;
+    padding-top: 2px;
+
+    &__title {
+      width: 268px;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0 auto 22px;
+    }
+
+    &__info {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 22px;
+      width: 319px;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .delivery-page {
+    height: 242px;
+
+    &__title {
+      width: 245px;
+      font-size: 15px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__info {
+      font-size: 14px;
+      line-height: 20px;
+      width: 291px;
+    }
+  }
+}
 </style>

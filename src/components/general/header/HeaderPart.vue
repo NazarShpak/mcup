@@ -1,5 +1,8 @@
 <template>
-  <div class="header-part">
+  <div
+      class="header-part"
+      :class="!pageName ? 'header-part-main' : 'header-part-other'"
+  >
     <div class="container">
 
       <!-- Logo -->
@@ -71,13 +74,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-part {
+.header-part-main,
+.header-part-other {
   height: 1011px;
-  padding-top: 38px;
   background-image: url("../../../assets/images/header-bg.png");
   background-size: 100% 1011px;
   background-repeat: no-repeat;
   background-position: center top;
+}
+
+.header-part {
+  padding-top: 38px;
   letter-spacing: 0.2px;
   color: #FFFFFF;
   text-shadow: 0 4.04615px 4.04615px rgba(0, 0, 0, 0.25);
@@ -153,11 +160,20 @@ export default {
 }
 
 @media (max-width: 428px) {
-  .header-part {
+  .header-part-main {
     height: 533px;
-    padding-top: 40px;
     background-image: url("../../../assets/images/header-bg-mob.png");
     background-size: 428px 533px;
+  }
+
+  .header-part-other {
+    height: 301px;
+    background-image: url("../../../assets/images/header-bg-mob-2.png");
+    background-size: 428px 301px;
+  }
+
+  .header-part {
+    padding-top: 40px;
     letter-spacing: 0.2px;
     color: #FFFFFF;
     text-shadow: 0 4.04615px 4.04615px rgba(0, 0, 0, 0.25);
@@ -199,18 +215,61 @@ export default {
       font-size: 18px;
       line-height: 20px;
     }
+
+    &__sub-block {
+      padding-top: 25px;
+    }
+
+    &__nav-btn {
+      height: 44px;
+      width:266px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 26px;
+    }
+
+    &__subtitle {
+      font-size: 19px;
+      line-height: 22px;
+    }
   }
 }
 
 @media (max-width: 390px) {
-  .header-part {
+  .header-part-main {
     height: 515px;
     background-size: 390px 524px;
+  }
+
+  .header-part-other {
+    height: 274px;
+    background-size: 390px 274px;
+  }
+
+  .header-part {
 
     &__block {
       height: 395px;
       background-size: 150px 163px;
       background-position: 215px 173px;
+    }
+
+    &__sub-block {
+      padding-top: 20px;
+    }
+
+    &__nav-btn {
+      height: 40px;
+      width: 242px;
+      font-size: 13px;
+      line-height: 15px;
+      margin-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: 17px;
+      line-height: 20px;
     }
   }
 }

@@ -13,7 +13,8 @@
             v-for="(info, index) of infos"
             :key="index"
             :info="info"
-
+            :active="indexOfActiveCard === index"
+            @changeCard="changeCard(index)"
         />
 
       </div>
@@ -33,30 +34,37 @@ export default {
   name: "PricePart",
   data() {
     return {
+      indexOfActiveCard: 2,
       infos: [
         {
           title: '1шт.',
           subtitle: '1 тест в упаковці',
           price: '123',
-          action: false
+          quantity: '1'
         },
         {
           title: 'від 100 шт.',
           subtitle: '1 тест в упаковці',
           price: '110',
-          action: false
+          quantity: '100'
         },
         {
-          title: 'від 100 шт.',
+          title: 'від 1000 шт.',
           subtitle: '1 тест в упаковці',
           price: '85',
-          action: true
+          quantity: '1000'
         }
       ]
     }
   },
   components: {
     PriceCard
+  },
+  methods: {
+    changeCard(value) {
+      this.indexOfActiveCard = value
+      this.$emit('openOrderForm', this.infos[this.indexOfActiveCard].quantity)
+    }
   }
 }
 </script>

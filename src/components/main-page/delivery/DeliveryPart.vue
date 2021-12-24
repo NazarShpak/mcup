@@ -24,7 +24,10 @@
 
       </div>
 
-      <button class="delivery-part__btn">
+      <button
+          class="delivery-part__btn"
+          @click="$emit('openOrderForm')"
+      >
         Замовити
       </button>
 

@@ -111,7 +111,7 @@ export default {
     }
   },
   created() {
-    this.quantityValue ? this.quantity = this.quantityValue : this.quantity = '1'
+    this.quantityValue ? this.quantity = this.quantityValue : this.quantity = '1000'
   },
   computed: {
     isComplete() {

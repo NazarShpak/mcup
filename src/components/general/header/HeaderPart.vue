@@ -6,10 +6,14 @@
       <img
           alt
           class="header-part__logo"
-          src="../../assets/icons/logo.png"
+          src="../../../assets/icons/logo.png"
       >
 
-      <div class="header-part__block">
+      <!-- Form main page -->
+      <div
+          class="header-part__block"
+          v-if="$route.name === 'main'"
+      >
 
         <h1 class="header-part__title">
           Экспресс-тест Testsealabs Covid-19 Antigen Cassette
@@ -19,12 +23,33 @@
           Швидкий результат за 10-15 хвилин в тебе завжди під рукою!
         </p>
 
-        <button class="header-part__btn">
+        <button
+            class="header-part__btn"
+            @click="$router.push ({name: 'delivery'})"
+        >
           Замовити
         </button>
 
       </div>
 
+      <!-- For other pages -->
+      <div
+          class="header-part__sub-block"
+          v-else
+      >
+
+        <button
+            class="header-part__nav-btn"
+            @click="$router.push ({name: 'main'})"
+        >
+          Повернутися до головної сторінки
+        </button>
+
+        <h2 class="header-part__subtitle">
+          {{ $route.name === 'delivery' ? 'Доставка товару' : otherPages ? 'Політика конфіденційності' : otherPages ? 'Повернення та обмін товару': '' }}
+        </h2>
+
+      </div>
 
     </div>
   </div>
@@ -32,7 +57,12 @@
 
 <script>
 export default {
-  name: "HeaderPart"
+  name: "HeaderPart",
+  data() {
+    return {
+      otherPages: false
+    }
+  }
 }
 </script>
 
@@ -40,7 +70,7 @@ export default {
 .header-part {
   height: 1011px;
   padding-top: 38px;
-  background-image: url("../../assets/images/header-bg.png");
+  background-image: url("../../../assets/images/header-bg.png");
   background-size: 100% 1011px;
   background-repeat: no-repeat;
   background-position: center top;
@@ -55,7 +85,7 @@ export default {
 
   &__block {
     height: 792px;
-    background-image: url("../../assets/images/header-bg-2.png");
+    background-image: url("../../../assets/images/header-bg-2.png");
     background-size: inherit;
     background-repeat: no-repeat;
     background-position: right 118px;
@@ -89,13 +119,40 @@ export default {
     letter-spacing: 0.2px;
     color: #2E2E2E;
   }
+
+  &__sub-block {
+    padding-top: 186px;
+    text-align: center;
+  }
+
+  &__nav-btn {
+    height: 98px;
+    width: 610px;
+    background: #FEFEFE;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    margin-bottom: 87px;
+  }
+
+  &__subtitle {
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 66px;
+    color: #FFFFFF;
+    text-shadow: 0 4.04615px 4.04615px rgba(0, 0, 0, 0.25);
+  }
 }
 
 @media (max-width: 428px) {
   .header-part {
     height: 533px;
     padding-top: 40px;
-    background-image: url("../../assets/images/header-bg-mob.png");
+    background-image: url("../../../assets/images/header-bg-mob.png");
     background-size: 428px 533px;
     letter-spacing: 0.2px;
     color: #FFFFFF;

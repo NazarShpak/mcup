@@ -23,7 +23,10 @@
         COVID-19 і призначений для самоконтролю.
       </p>
 
-      <button class="plus-part__btn">
+      <button
+          class="plus-part__btn"
+          @click="$emit('openOrderForm')"
+      >
         Замовити
       </button>
 

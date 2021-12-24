@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router'
 import MainPage from "../pages/MainPage";
+import DeliveryPage from "../pages/DeliveryPage";
 
 
 export default new VueRouter({
@@ -9,11 +10,11 @@ export default new VueRouter({
       name: "main",
       component: MainPage
     },
-    // {
-    //   path: "/cars",
-    //   name: "cars",
-    //   component: CarsPage
-    // },
+    {
+      path: "/delivery",
+      name: "delivery",
+      component: DeliveryPage
+    },
     // {
     //   path: "/services",
     //   name: "services",

@@ -41,6 +41,7 @@ button {
   padding: 0;
   border: none;
   cursor: pointer;
+  transition: all .5s;
 }
 
 p {
@@ -53,11 +54,18 @@ a, span {
   display: inline-block;
   color: inherit;
   cursor: pointer;
+  transition: all .5s;
 }
 
 input,
 button:focus {
   outline: none;
+}
+
+button:hover,
+a:hover {
+  transform: scale(1.05);
+  transition: all .5s;
 }
 
 label,

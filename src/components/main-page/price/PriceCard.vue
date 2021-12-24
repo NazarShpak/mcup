@@ -1,7 +1,7 @@
 <template>
   <div
       class="price-card"
-      :class="info.action ? 'card-action' : ''"
+      :class="active ? 'card-active' : ''"
   >
 
     <h6 class="price-card__title">
@@ -19,7 +19,8 @@
 
     <button
         class="price-card__btn"
-        :class="info.action ? 'btn-action' : ''"
+        :class="active ? 'btn-active' : ''"
+        @click="$emit('changeCard')"
     >
       Замовити
     </button>
@@ -33,6 +34,9 @@ export default {
   props: {
     info: {
       type: Object
+    },
+    active: {
+      type: Boolean
     }
   }
 }
@@ -97,7 +101,7 @@ export default {
   }
 }
 
-.card-action {
+.card-active {
   background: linear-gradient(39.97deg, #EF2779 0.79%, #7834BE 79.29%);
   border: 1px solid #DEDEDE;
   box-sizing: border-box;
@@ -106,7 +110,7 @@ export default {
   color: #FFFFFF;
 }
 
-.btn-action {
+.btn-active {
   background: #FFFFFF;
   color: #EF2779;
 }

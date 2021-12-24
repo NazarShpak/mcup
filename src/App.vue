@@ -18,6 +18,7 @@
         class="header-part"
         ref="headerPart"
         :pageName="pageName"
+        @goTo="goTo"
     />
 
     <!-- MAIN PART -->
@@ -54,6 +55,18 @@ export default {
     OrderForm,
     HeaderPart,
     FooterPart
+  },
+  created() {
+    if(this.$route.name === 'main') {
+      this.pageName = 'main'
+    } else if (this.$route.name === 'delivery') {
+      this.pageName = 'delivery'
+    } else if (this.$route.name === 'return-exchange') {
+      this.pageName = 'return-exchange'
+    }
+    // else if (this.$route.name === 'main') {
+    //   this.pageName = 'main'
+    // }
   },
   methods: {
     openOrderForm(value) {

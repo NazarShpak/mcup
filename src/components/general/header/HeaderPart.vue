@@ -1,7 +1,7 @@
 <template>
   <div
       class="header-part"
-      :class="!pageName ? 'header-part-main' : 'header-part-other'"
+      :class="pageName === 'main' ? 'header-part-main' : 'header-part-other'"
   >
     <div class="container">
 
@@ -43,7 +43,7 @@
 
         <button
             class="header-part__nav-btn"
-            @click="$router.push ({name: 'main'})"
+            @click="goTo"
         >
           Повернутися до головної сторінки
         </button>
@@ -69,20 +69,17 @@ export default {
     pageName: {
       type: String
     }
+  },
+  methods: {
+    goTo() {
+      this.$router.push ({name: 'main'})
+      this.$emit('goTo', 'main')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.header-part-main,
-.header-part-other {
-  height: 1011px;
-  background-image: url("../../../assets/images/header-bg.png");
-  background-size: 100% 1011px;
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
 .header-part {
   padding-top: 38px;
   letter-spacing: 0.2px;
@@ -159,19 +156,16 @@ export default {
   }
 }
 
+.header-part-main,
+.header-part-other {
+  height: 1011px;
+  background-image: url("../../../assets/images/header-bg.png");
+  background-size: 100% 1011px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
 @media (max-width: 428px) {
-  .header-part-main {
-    height: 533px;
-    background-image: url("../../../assets/images/header-bg-mob.png");
-    background-size: 428px 533px;
-  }
-
-  .header-part-other {
-    height: 301px;
-    background-image: url("../../../assets/images/header-bg-mob-2.png");
-    background-size: 428px 301px;
-  }
-
   .header-part {
     padding-top: 40px;
     letter-spacing: 0.2px;
@@ -234,19 +228,20 @@ export default {
       line-height: 22px;
     }
   }
-}
-
-@media (max-width: 390px) {
   .header-part-main {
-    height: 515px;
-    background-size: 390px 524px;
+    height: 533px;
+    background-image: url("../../../assets/images/header-bg-mob.png");
+    background-size: 428px 533px;
   }
 
   .header-part-other {
-    height: 274px;
-    background-size: 390px 274px;
+    height: 301px;
+    background-image: url("../../../assets/images/header-bg-mob-2.png");
+    background-size: 428px 301px;
   }
+}
 
+@media (max-width: 390px) {
   .header-part {
 
     &__block {
@@ -271,6 +266,16 @@ export default {
       font-size: 17px;
       line-height: 20px;
     }
+  }
+
+  .header-part-main {
+    height: 515px;
+    background-size: 390px 524px;
+  }
+
+  .header-part-other {
+    height: 274px;
+    background-size: 390px 274px;
   }
 }
 </style>

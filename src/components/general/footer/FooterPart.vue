@@ -62,7 +62,6 @@
 
             <li
                 class="footer-part__menu-item-first"
-                @click="goTo('return-exchange')"
             >
               Політика конфіденційності
             </li>
@@ -74,6 +73,7 @@
             </li>
             <li
                 class="footer-part__menu-item-third"
+                @click="goTo('return-exchange')"
             >
               Повернення та обмін товару
             </li>

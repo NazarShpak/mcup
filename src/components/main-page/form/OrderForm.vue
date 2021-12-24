@@ -13,7 +13,7 @@
           alt
           class="order-form__btn-close"
           src="../../../assets/icons/close.png"
-          @click="$emit('closeForm')"
+          @click="$emit('closeOrderForm')"
       >
 
       <!-- Title  -->
@@ -155,10 +155,7 @@ export default {
   background: #FFFFFF;
   box-shadow: 0 42px 55px rgba(0, 0, 0, 0.06), 0 -6px 42px rgba(0, 0, 0, 0.04), 0 -13px 14px rgba(0, 0, 0, 0.04), 0 -3px 2px rgba(0, 0, 0, 0.04);
   border-radius: 12px;
-
-  &__btn-close {
-    display: none;
-  }
+  font-family: 'SFUIText';
 
   &__form,
   &__form-label {
@@ -173,8 +170,21 @@ export default {
     padding: 31px 57px;
   }
 
+  &__btn-close {
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    height: 25px;
+    width: 25px;
+    transition: all .5s;
+  }
+
+  &__btn-close:hover {
+    transform: scale(1.05);
+    transition: all .5s;
+  }
+
   &__form-title {
-    font-family: 'SFUIText';
     font-weight: 500;
     font-size: 24px;
     line-height: 37px;
@@ -183,7 +193,6 @@ export default {
   }
 
   &__form-label {
-    font-family: 'SFUIText';
     text-align: left;
     font-weight: 700;
     font-size: 31px;
@@ -236,7 +245,6 @@ export default {
   }
 
   &__btn {
-    font-family: 'SFUIText';
     margin: 240px auto 0;
     width: 298px;
     height: 75px;
@@ -270,6 +278,12 @@ export default {
 
     &__form {
       padding: 20px 35px;
+    }
+
+    &__btn-close {
+      right: 20px;
+      height: 15px;
+      width: 15px;
     }
 
     &__form-title {
@@ -335,11 +349,6 @@ export default {
   border-bottom: 2px solid #54DD83;
 }
 
-.form-btn-active {
-  background: linear-gradient(180deg, #EF2779 0%, #7834BE 100%);
-  color: #FCFCFC;
-}
-
 @media (max-width: 390px) {
   .order-form {
     height: 409px;
@@ -349,6 +358,12 @@ export default {
 
     &__form {
       padding: 15px 28px;
+    }
+
+    &__btn-close {
+      right: 15px;
+      height: 10px;
+      width: 10px;
     }
 
     &__form-title {

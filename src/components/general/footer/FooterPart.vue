@@ -22,6 +22,7 @@
             </li>
             <li
                 class="footer-part__menu-item-third"
+                @click="goTo('privacy-policy-page')"
             >
               Політика конфіденційності
             </li>
@@ -62,6 +63,7 @@
 
             <li
                 class="footer-part__menu-item-first"
+                @click="goTo('privacy-policy-page')"
             >
               Політика конфіденційності
             </li>
@@ -158,6 +160,7 @@ export default {
 
   .container {
     padding: 0 81px;
+    position: relative;
   }
 
   .second {
@@ -184,6 +187,7 @@ export default {
     line-height: 27px;
     width: 545px;
     margin-bottom: 35px;
+    cursor: pointer;
   }
 
   &__menu-item-first {
@@ -193,6 +197,18 @@ export default {
   &__menu-item-first,
   &__menu-item-second {
     margin-bottom: 30px;
+    transition: all .5s;
+  }
+
+  &__menu-item-third {
+    transition: all .5s;
+  }
+
+  &__menu-item-first:hover,
+  &__menu-item-second:hover,
+  &__menu-item-third:hover {
+    transform: scale(1.05);
+    transition: all .5s;
   }
 
   &__info-producer {
@@ -226,7 +242,7 @@ export default {
 
   &__other-info {
     position: absolute;
-    bottom: 16px;
+    bottom: 0;
     left: 389px;
     width: 240px;
     font-size: 23px;

@@ -19,6 +19,8 @@
         ref="headerPart"
         :pageName="pageName"
         @goTo="goTo"
+        @openOrderForm="openOrderForm"
+        @closeOrderForm="formOpen = false"
     />
 
     <!-- MAIN PART -->
@@ -57,16 +59,15 @@ export default {
     FooterPart
   },
   created() {
-    if(this.$route.name === 'main') {
+    if (this.$route.name === 'main') {
       this.pageName = 'main'
     } else if (this.$route.name === 'delivery') {
       this.pageName = 'delivery'
     } else if (this.$route.name === 'return-exchange') {
       this.pageName = 'return-exchange'
+    } else if (this.$route.name === 'privacy-policy-page') {
+      this.pageName = 'privacy-policy-page'
     }
-    // else if (this.$route.name === 'main') {
-    //   this.pageName = 'main'
-    // }
   },
   methods: {
     openOrderForm(value) {
@@ -75,7 +76,7 @@ export default {
       this.scrollIntoHeaderPart('behavior')
     },
     scrollIntoHeaderPart(value) {
-      if(value) {
+      if (value) {
         this.$refs.headerPart.$el.scrollIntoView({behavior: 'smooth'});
       } else {
         this.$refs.headerPart.$el.scrollIntoView();

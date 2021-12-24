@@ -28,7 +28,7 @@
 
         <button
             class="header-part__btn"
-
+            @click="$emit('openOrderForm')"
         >
           Замовити
         </button>
@@ -49,7 +49,9 @@
         </button>
 
         <h2 class="header-part__subtitle">
-          {{ pageName === 'delivery' ? 'Доставка товару' : pageName === 'return-exchange' ? 'Повернення та обмін товару' : otherPages ? 'Політика конфіденційності' : '' }}
+          {{
+            pageName === 'delivery' ? 'Доставка товару' : pageName === 'return-exchange' ? 'Повернення та обмін товару' : pageName === 'privacy-policy-page' ? 'Політика конфіденційності' : ''
+          }}
         </h2>
       </div>
 
@@ -60,11 +62,6 @@
 <script>
 export default {
   name: "HeaderPart",
-  data() {
-    return {
-      otherPages: false
-    }
-  },
   props: {
     pageName: {
       type: String
@@ -72,7 +69,7 @@ export default {
   },
   methods: {
     goTo() {
-      this.$router.push ({name: 'main'})
+      this.$router.push({name: 'main'})
       this.$emit('goTo', 'main')
     }
   }
@@ -216,7 +213,7 @@ export default {
 
     &__nav-btn {
       height: 44px;
-      width:266px;
+      width: 266px;
       border-radius: 4px;
       font-size: 14px;
       line-height: 16px;

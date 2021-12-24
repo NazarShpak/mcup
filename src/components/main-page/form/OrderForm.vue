@@ -129,19 +129,25 @@ export default {
     changeQuantity(value) {
       this.quantity = value
     },
-    submitForm() {
-      const request = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: this.name,
-          phone: this.phone,
-          quantity: this.quantity
-        })
-      };
-      console.log(request)
+    async submitForm() {
+      try {
+        const request = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: this.name,
+            phone: this.phone,
+            quantity: this.quantity
+          })
+        };
+        const url = ''
+        await fetch(url, request)
+      } catch (error) {
+        console.error('Fetch error: ', error);
+      }
+
       this.$emit('closeOrderForm')
     },
   }
